@@ -20,15 +20,15 @@ User::User(char const *ptr) {
 
 class Pin {
 private:
-    double number;
+    int number;
 public:
-    Pin(double nr);
-    double ForgottenPin() { return this->number; };
+    int ForgottenPin() { return this->number; };
+    Pin() {this->number = 1234; }
+    Pin(int nr) {this->number = nr; };
+    Pin(double nr) : Pin(static_cast<int>(nr)) {};
+    Pin(float nr) : Pin(static_cast<int>(nr)) {};
+    Pin(std::string nr) : Pin(std::stod(nr)) {};
 };
-
-Pin::Pin(double nr) {
-    this -> number = nr;
-}
 
 int main() {
     User newUser("JohnP");
