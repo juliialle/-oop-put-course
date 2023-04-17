@@ -64,21 +64,21 @@ public:
 };
 
 Euro::Euro(std::string ab, double am) {
-    this->abbreviation = ab;
-    this->amount = am;
+   abbreviation = ab;
+   amount = am;
 }
 
 double Euro::ConvertedToDollars(const Cantor &cantor) const {
-    double eu = this->amount;
+    double eu = amount;
     return eu / cantor.Rate("EUR"); //rate zwraca wartosc jednego dolara w innej walucie
 }
 
 std::string Euro::Abbreviation() const {
-    return this->abbreviation;
+    return abbreviation;
 }
 
 double Euro::Amount() const {
-    return this->amount;
+    return amount;
 }
 
 int main() {
